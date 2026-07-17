@@ -34,4 +34,10 @@ app.post('/api/scarecrow', async (req, res) => {
 });
 
 app.get('*', (_, res) => res.sendFile(path.join(__dirname, 'index.html')));
-app.listen(port, () => console.log(`Veggie Do is growing at http://localhost:${port}`));
+
+// Vercel imports the app as a serverless function; local development still starts normally.
+if (require.main === module) {
+  app.listen(port, () => console.log(`Veggie Do is growing at http://localhost:${port}`));
+}
+
+module.exports = app;
