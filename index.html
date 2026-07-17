@@ -48,36 +48,220 @@
     <link rel="stylesheet" href="css/no-shadows.css" />
     <link rel="stylesheet" href="css/uniform-borders.css" />
     <link rel="stylesheet" href="css/task-name-emphasis.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chicle&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main id="farm" aria-label="Sprout and Shout task farm">
-      <div class="hill hill-back"></div><div class="hill hill-front"></div>
-      <div class="field-pattern"></div><div class="path path-one"></div><div class="path path-two"></div>
+      <div class="hill hill-back"></div>
+      <div class="hill hill-front"></div>
+      <div class="field-pattern"></div>
+      <div class="path path-one"></div>
+      <div class="path path-two"></div>
       <section id="plot" aria-live="polite"></section>
       <div id="sparkles" aria-hidden="true"></div>
-      <button id="about-trigger" class="brand" aria-haspopup="dialog" aria-label="About Veggie Do"><span><h1>Veggie Do</h1></span></button>
-      <button id="reset-farm" class="reset-farm" aria-label="Reset farm day">Reset farm day</button>
-      <button id="harvest-journal-trigger" class="farm-status" aria-expanded="false" aria-controls="harvest-journal"><span id="completed-count">0</span><small>happy harvests</small></button>
-      <aside id="harvest-journal" class="harvest-journal hidden" aria-label="Happy harvest journal"><h2>Happy harvests</h2><p class="journal-intro">Every task you’ve helped grow!</p><div class="harvest-filters" role="group" aria-label="Filter completed tasks"><button class="harvest-filter active" data-filter="all">All <b id="all-count">0</b></button><button class="harvest-filter urgent" data-filter="urgent">Urgent <b id="urgent-count">0</b></button><button class="harvest-filter medium" data-filter="medium">Moderate <b id="medium-count">0</b></button><button class="harvest-filter chill" data-filter="chill">Chill <b id="chill-count">0</b></button></div><ol id="harvest-list" class="harvest-list"></ol><p id="no-harvests" class="no-harvests">Your first harvest is just a shovel scoop away.</p></aside>
+      <button
+        id="about-trigger"
+        class="brand"
+        aria-haspopup="dialog"
+        aria-label="About Veggie Do"
+      >
+        <span><h1>Veggie Do</h1></span>
+      </button>
+      <button id="reset-farm" class="reset-farm" aria-label="Reset farm day">
+        Reset farm day
+      </button>
+      <button
+        id="harvest-journal-trigger"
+        class="farm-status"
+        aria-expanded="false"
+        aria-controls="harvest-journal"
+      >
+        <span id="completed-count">0</span><small>happy harvests</small>
+      </button>
+      <aside
+        id="harvest-journal"
+        class="harvest-journal hidden"
+        aria-label="Happy harvest journal"
+      >
+        <h2>Happy harvests</h2>
+        <p class="journal-intro">Every task you’ve helped grow!</p>
+        <div
+          class="harvest-filters"
+          role="group"
+          aria-label="Filter completed tasks"
+        >
+          <button class="harvest-filter active" data-filter="all">
+            All <b id="all-count">0</b></button
+          ><button class="harvest-filter urgent" data-filter="urgent">
+            Urgent <b id="urgent-count">0</b></button
+          ><button class="harvest-filter medium" data-filter="medium">
+            Moderate <b id="medium-count">0</b></button
+          ><button class="harvest-filter chill" data-filter="chill">
+            Chill <b id="chill-count">0</b>
+          </button>
+        </div>
+        <ol id="harvest-list" class="harvest-list"></ol>
+        <p id="no-harvests" class="no-harvests">
+          Your first harvest is just a shovel scoop away.
+        </p>
+      </aside>
       <div class="toolbox">
-        <button id="plant-trigger" class="seed-bag" aria-label="Plant a new task"><b>SEEDS</b><small>plant a task</small></button>
-        <button id="shovel-trigger" class="shovel-button" aria-label="Toggle shovel mode"><span>🪏</span><b>Dig it up!</b></button>
+        <button
+          id="plant-trigger"
+          class="seed-bag"
+          aria-label="Plant a new task"
+        >
+          <b>SEEDS</b><small>plant a task</small>
+        </button>
+        <button
+          id="shovel-trigger"
+          class="shovel-button"
+          aria-label="Toggle shovel mode"
+        >
+          <span>🪏</span><b>Dig it up!</b>
+        </button>
       </div>
-      <div id="empty-state"><strong>Your field is waiting...</strong><span>Plant a task seed to meet your first veggie buddy!</span></div>
-      <section id="plant-modal" class="modal hidden" aria-modal="true" role="dialog" aria-labelledby="modal-title">
+      <div id="empty-state">
+        <strong>Your field is waiting...</strong
+        ><span>Plant a task seed to meet your first veggie buddy!</span>
+      </div>
+      <section
+        id="plant-modal"
+        class="modal hidden"
+        aria-modal="true"
+        role="dialog"
+        aria-labelledby="modal-title"
+      >
         <form id="task-form" class="seed-form">
-          <h2 id="modal-title">Plant your task!</h2><p>What shall grow in your garden?</p>
-          <label>Task name<input id="task-name" maxlength="38" required autocomplete="off" placeholder="Water the basil..." /></label>
-          <label class="task-note-label">Task note <small>(optional)</small><textarea id="task-note" maxlength="120" placeholder="A gentle reminder for later..."></textarea></label>
-          <fieldset><legend>How much of a fuss?</legend><div class="priority-options" role="group" aria-label="Task priority"><button type="button" class="priority urgent" data-priority="urgent" aria-pressed="false">Urgent</button><button type="button" class="priority medium" data-priority="medium" aria-pressed="false">Moderate</button><button type="button" class="priority chill" data-priority="chill" aria-pressed="false">Chill</button></div><input id="priority-value" type="hidden" value="" /></fieldset>
-          <button id="plant-button" class="plant-button" type="button">Plant it!</button>
+          <h2 id="modal-title">Plant your task!</h2>
+          <p>What shall grow in your garden?</p>
+          <label
+            >Task name<input
+              id="task-name"
+              maxlength="38"
+              required
+              autocomplete="off"
+              placeholder="Water the basil..."
+          /></label>
+          <label class="task-note-label"
+            >Task note <small>(optional)</small
+            ><textarea
+              id="task-note"
+              maxlength="120"
+              placeholder="A gentle reminder for later..."
+            ></textarea>
+          </label>
+          <fieldset>
+            <legend>How much of a fuss?</legend>
+            <div
+              class="priority-options"
+              role="group"
+              aria-label="Task priority"
+            >
+              <button
+                type="button"
+                class="priority urgent"
+                data-priority="urgent"
+                aria-pressed="false"
+              >
+                Urgent</button
+              ><button
+                type="button"
+                class="priority medium"
+                data-priority="medium"
+                aria-pressed="false"
+              >
+                Moderate</button
+              ><button
+                type="button"
+                class="priority chill"
+                data-priority="chill"
+                aria-pressed="false"
+              >
+                Chill
+              </button>
+            </div>
+            <input id="priority-value" type="hidden" value="" />
+          </fieldset>
+          <button id="plant-button" class="plant-button" type="button">
+            Plant it!
+          </button>
         </form>
       </section>
-      <section id="about-modal" class="modal hidden" aria-modal="true" role="dialog" aria-labelledby="about-title"><div class="about-card"><h2 id="about-title">Welcome to Veggie Do!</h2><p>Veggie Do is your farm-like to-do list 🥦!</p><p>Sow a task like a seed and harvest them with a shovel when you're finished. When you get lost while running your farm, ask KiKi The Crow for help 🐦‍⬛!!</p><p>No boring lists, just a cozy farm full of the tasks you've grown 🎉!!!</p><button id="about-ok" class="plant-button" type="button">Let’s grow!</button></div></section>
+      <section
+        id="about-modal"
+        class="modal hidden"
+        aria-modal="true"
+        role="dialog"
+        aria-labelledby="about-title"
+      >
+        <div class="about-card">
+          <h2 id="about-title">Welcome to Veggie Do!</h2>
+          <p>Veggie Do is your farm-like to-do list 🥦!</p>
+          <p>
+            Sow a task like a seed and harvest them with a shovel when you're
+            finished. When you get lost while running your farm, ask KiKi The
+            Crow for help 🐦‍⬛!!
+          </p>
+          <p>
+            No boring lists, just a cozy farm full of the tasks you've grown
+            🎉!!!
+          </p>
+          <button id="about-ok" class="plant-button" type="button">
+            Let’s grow!
+          </button>
+        </div>
+      </section>
       <div id="toast" role="status"></div>
-      <div id="scarecrow-wrap" class="scarecrow-wrap" role="button" tabindex="0" aria-label="Talk to the farm crow" aria-expanded="false"><div class="scarecrow"><img class="crow-art" src="assets/crow.svg" alt="Friendly farm crow" draggable="false" /></div></div>
-      <section id="scarecrow-dialogue" class="scarecrow-dialogue hidden" role="dialog" aria-modal="false" aria-labelledby="scarecrow-title"><h2 id="scarecrow-title">KiKi</h2><p id="scarecrow-message">Caw! The field and I have seen a thing or two.</p><form id="scarecrow-form" class="scarecrow-form"><input id="scarecrow-input" maxlength="600" autocomplete="off" placeholder="Ask about the field..." /><button type="submit">Ask</button></form></section><span id="scarecrow-spark" class="scarecrow-spark" aria-hidden="true">✦</span>
+      <div
+        id="scarecrow-wrap"
+        class="scarecrow-wrap"
+        role="button"
+        tabindex="0"
+        aria-label="Talk to the farm crow"
+        aria-expanded="false"
+      >
+        <div class="scarecrow">
+          <img
+            class="crow-art"
+            src="assets/crow.svg"
+            alt="Friendly farm crow"
+            draggable="false"
+          />
+        </div>
+      </div>
+      <section
+        id="scarecrow-dialogue"
+        class="scarecrow-dialogue hidden"
+        role="dialog"
+        aria-modal="false"
+        aria-labelledby="scarecrow-title"
+      >
+        <h2 id="scarecrow-title">KiKi</h2>
+        <p id="scarecrow-message">
+          Caw! The field and I have seen a thing or two.
+        </p>
+        <form id="scarecrow-form" class="scarecrow-form">
+          <input
+            id="scarecrow-input"
+            maxlength="600"
+            autocomplete="off"
+            placeholder="Ask about the field..."
+          /><button type="submit">Ask</button>
+        </form>
+      </section>
+      <span id="scarecrow-spark" class="scarecrow-spark" aria-hidden="true"
+        >✦</span
+      >
     </main>
-    <script src="js/audio.js"></script><script src="js/farm.js"></script><script src="js/app.js"></script><script src="js/scarecrow.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/farm.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/scarecrow.js"></script>
   </body>
 </html>
