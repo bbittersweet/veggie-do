@@ -1,11 +1,11 @@
 /* Keep task titles easy to spot wherever they appear. */
-.task .sign,
-.harvest-list strong {
+#farm .task .sign,
+#farm .harvest-list strong {
   font-family: Fredoka, Arial, sans-serif !important;
   font-weight: 700 !important;
 }
 
-.task:hover .sign::before {
+#farm .task:hover .sign::before {
   font-family: Fredoka, Arial, sans-serif !important;
-  font-weight: 400 !important;
+  font-weight: 700 !important;
 }
