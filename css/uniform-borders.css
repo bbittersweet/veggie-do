@@ -1,0 +1,23 @@
+/* One consistent outline weight for every CSS-drawn interface element. */
+:root { --ui-outline: 4px; }
+
+#farm :is(
+  .task .sign,
+  .reset-farm,
+  .harvest-journal,
+  .about-card,
+  .seed-form,
+  .farm-status,
+  .plant-button,
+  .priority,
+  .harvest-filter,
+  .harvest-icon,
+  .scarecrow-dialogue,
+  .scarecrow-form input,
+  .scarecrow-form button,
+  .task-note-label textarea,
+  .seed-form input#task-name,
+  .rock
+) {
+  border-width: var(--ui-outline) !important;
+}
