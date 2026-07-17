@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded',()=>{
   function restoreFarm(){try{const saved=JSON.parse(localStorage.getItem(saveKey)||'null');if(!saved)return;(saved.harvests||[]).forEach(item=>harvestRecords.push(item));(saved.vegetables||[]).forEach(item=>{const t=Farm.makeTask(item.name,item.priority,item.note||'');t.el.querySelector('.sign').dataset.note=item.note||item.name;t.x=item.x;t.y=item.y;t.el.style.left=t.x+'vw';t.el.style.top=t.y+'vh'});if((saved.vegetables||[]).length)empty.classList.add('gone');Farm.setHarvestCount(harvestRecords.length)}catch(error){localStorage.removeItem(saveKey)}}
   const aboutModal=document.querySelector('#about-modal');aboutModal.classList.remove('hidden');
   const close=()=>modal.classList.add('hidden');
-  document.querySelector('#plant-trigger').onclick=()=>{FarmAudio.pop();modal.classList.remove('hidden');setTimeout(()=>input.focus(),120)};
+  const clearPriority=()=>{priority.value='';document.querySelectorAll('[data-priority]').forEach(choice=>{choice.classList.remove('selected');choice.setAttribute('aria-pressed','false')})};
+  document.querySelector('#plant-trigger').onclick=()=>{FarmAudio.pop();clearPriority();modal.classList.remove('hidden');setTimeout(()=>input.focus(),120)};
   document.querySelector('#about-trigger').onclick=()=>{FarmAudio.pop();aboutModal.classList.remove('hidden')};
   const closeAbout=()=>aboutModal.classList.add('hidden');
   document.querySelector('#about-ok').onclick=closeAbout;aboutModal.onclick=e=>e.target===aboutModal&&closeAbout();
@@ -26,12 +27,13 @@ document.addEventListener('DOMContentLoaded',()=>{
     if(planting)return;
     const name=input.value.trim();
     if(!name){input.focus();show('Give your little seed a task name first!');return;}
+    if(!priority.value){show('Choose how much of a fuss this task needs!');return;}
     planting=true;plantButton.disabled=true;
     const p=priority.value,note=noteInput.value.trim(),x=18+Math.random()*65;
     try{FarmAudio.plant()}catch(error){/* Sound is optional; planting should always continue. */}
     const seed=document.createElement('i');seed.className='seed';seed.style.left=x+'vw';seed.style.top='36vh';farm.append(seed);
     setTimeout(()=>{const t=Farm.makeTask(name,p,note);t.el.querySelector('.sign').dataset.note=note||name;t.x=x;t.y=48+Math.random()*16;Farm.burst(t.x+4,t.y+5);seed.remove();saveFarm()},510);
-    form.reset();priority.value='urgent';document.querySelectorAll('[data-priority]').forEach(choice=>{const selected=choice.dataset.priority==='urgent';choice.classList.toggle('selected',selected);choice.setAttribute('aria-pressed',String(selected))});close();empty.classList.add('gone');show('A tiny helper has sprouted!');setTimeout(()=>{planting=false;plantButton.disabled=false},650);
+    form.reset();clearPriority();close();empty.classList.add('gone');show('A tiny helper has sprouted!');setTimeout(()=>{planting=false;plantButton.disabled=false},650);
   }
   plantButton.onclick=plant;
   form.onsubmit=e=>{e.preventDefault();plant()};
