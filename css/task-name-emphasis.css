@@ -1,0 +1,5 @@
+/* Keep task titles easy to spot wherever they appear. */
+.task .sign,
+.harvest-list strong {
+  font-weight: 700 !important;
+}
