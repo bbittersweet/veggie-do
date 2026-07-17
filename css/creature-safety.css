@@ -1,0 +1,3 @@
+/* Creature artwork is allowed to grow beyond its positioning footprint. */
+.task{width:150px;height:160px;overflow:visible;transform-origin:center bottom}.task,.task *{overflow:visible}.creature{width:128px;height:126px;left:11px;bottom:0;overflow:visible;transform-origin:center bottom}.body,.face,.leaves,.eye,.mouth,.cheek{overflow:visible;transform-origin:center bottom}.body{transform-origin:center bottom}.task .sign,.task .note-bubble{z-index:12}.task .note-bubble{bottom:135px}.task .sign{top:-30px}
+/* Species clip-paths sculpt the vegetable itself; no parent clips the artwork. */

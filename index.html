@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veggie Do</title>
+    <link rel="icon" type="image/svg+xml" href="assets/tomato.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/game.css" />
+    <link rel="stylesheet" href="css/form-fix.css" />
+    <link rel="stylesheet" href="css/journal.css" />
+    <link rel="stylesheet" href="css/notes.css" />
+    <link rel="stylesheet" href="css/harvest-notes.css" />
+    <link rel="stylesheet" href="css/harvest-filters.css" />
+    <link rel="stylesheet" href="css/full-task-names.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/clipboard-harvest.css" />
+    <link rel="stylesheet" href="css/garden-beds.css" />
+    <link rel="stylesheet" href="css/simple-meadow.css" />
+    <link rel="stylesheet" href="css/species.css" />
+    <link rel="stylesheet" href="css/creature-safety.css" />
+    <link rel="stylesheet" href="css/chill-edge-fix.css" />
+    <link rel="stylesheet" href="css/hover-note-sign.css" />
+    <link rel="stylesheet" href="css/rounded-vegetables.css" />
+    <link rel="stylesheet" href="css/scarecrow.css" />
+    <link rel="stylesheet" href="css/reset-farm.css" />
+    <link rel="stylesheet" href="css/designed-veggies.css" />
+    <link rel="stylesheet" href="css/designed-clipboard.css" />
+    <link rel="stylesheet" href="css/designed-seed-bag.css" />
+    <link rel="stylesheet" href="css/designed-wood-frame.css" />
+    <link rel="stylesheet" href="css/flexible-wood-containers.css" />
+    <link rel="stylesheet" href="css/designed-shovel.css" />
+    <link rel="stylesheet" href="css/tool-order.css" />
+    <link rel="stylesheet" href="css/designed-background.css" />
+    <link rel="stylesheet" href="css/matched-outline-weight.css" />
+    <link rel="stylesheet" href="css/empty-state-clean.css" />
+    <link rel="stylesheet" href="css/centered-harvest-journal.css" />
+    <link rel="stylesheet" href="css/vegetable-facing.css" />
+    <link rel="stylesheet" href="css/straight-assets.css" />
+    <link rel="stylesheet" href="css/consistent-name-tag-gap.css" />
+    <link rel="stylesheet" href="css/clean-title.css" />
+    <link rel="stylesheet" href="css/thinking-scarecrow.css" />
+    <link rel="stylesheet" href="css/sans-serif-everywhere.css" />
+    <link rel="stylesheet" href="css/crow.css" />
+    <link rel="stylesheet" href="css/uniform-text-size.css" />
+    <link rel="stylesheet" href="css/harvest-number.css" />
+    <link rel="stylesheet" href="css/uniform-text-color.css" />
+  </head>
+  <body>
+    <main id="farm" aria-label="Sprout and Shout task farm">
+      <div class="hill hill-back"></div><div class="hill hill-front"></div>
+      <div class="field-pattern"></div><div class="path path-one"></div><div class="path path-two"></div>
+      <section id="plot" aria-live="polite"></section>
+      <div id="sparkles" aria-hidden="true"></div>
+      <button id="about-trigger" class="brand" aria-haspopup="dialog" aria-label="About Veggie Do"><span><h1>Veggie Do</h1></span></button>
+      <button id="reset-farm" class="reset-farm" aria-label="Reset farm day">Reset farm day</button>
+      <button id="harvest-journal-trigger" class="farm-status" aria-expanded="false" aria-controls="harvest-journal"><span id="completed-count">0</span><small>happy harvests</small></button>
+      <aside id="harvest-journal" class="harvest-journal hidden" aria-label="Happy harvest journal"><h2>Happy harvests</h2><p class="journal-intro">Every task you’ve helped grow!</p><div class="harvest-filters" role="group" aria-label="Filter completed tasks"><button class="harvest-filter active" data-filter="all">All <b id="all-count">0</b></button><button class="harvest-filter urgent" data-filter="urgent">Urgent <b id="urgent-count">0</b></button><button class="harvest-filter medium" data-filter="medium">Kinda <b id="medium-count">0</b></button><button class="harvest-filter chill" data-filter="chill">Chill <b id="chill-count">0</b></button></div><ol id="harvest-list" class="harvest-list"></ol><p id="no-harvests" class="no-harvests">Your first harvest is just a shovel scoop away.</p></aside>
+      <div class="toolbox">
+        <button id="plant-trigger" class="seed-bag" aria-label="Plant a new task"><b>SEEDS</b><small>plant a task</small></button>
+        <button id="shovel-trigger" class="shovel-button" aria-label="Toggle shovel mode"><span>🪏</span><b>Dig it up!</b></button>
+      </div>
+      <div id="empty-state"><strong>Your field is waiting...</strong><span>Plant a task seed to meet your first veggie buddy!</span></div>
+      <section id="plant-modal" class="modal hidden" aria-modal="true" role="dialog" aria-labelledby="modal-title">
+        <form id="task-form" class="seed-form">
+          <h2 id="modal-title">Plant a tiny task!</h2><p>What shall grow in your garden?</p>
+          <label>Task name<input id="task-name" maxlength="38" required autocomplete="off" placeholder="Water the basil..." /></label>
+          <label class="task-note-label">A tiny note <small>(optional)</small><textarea id="task-note" maxlength="120" placeholder="A gentle reminder for later..."></textarea></label>
+          <fieldset><legend>How much of a fuss?</legend><div class="priority-options" role="group" aria-label="Task priority"><button type="button" class="priority urgent selected" data-priority="urgent" aria-pressed="true">🔥 Urgent</button><button type="button" class="priority medium" data-priority="medium" aria-pressed="false">💦 Kinda urgent</button><button type="button" class="priority chill" data-priority="chill" aria-pressed="false">☁ Chill</button></div><input id="priority-value" type="hidden" value="urgent" /></fieldset>
+          <button id="plant-button" class="plant-button" type="button">Plant it! <span>✦</span></button>
+        </form>
+      </section>
+      <section id="about-modal" class="modal hidden" aria-modal="true" role="dialog" aria-labelledby="about-title"><div class="about-card"><h2 id="about-title">Welcome to Veggie Do!</h2><p>Veggie Do is a charming little farm with lots of fun tasks 🥦!</p><p>Sow a task like a seed and harvest them with a shovel when you're finished. When you get lost while running your farm, ask KiKi for help 🐦‍⬛!!</p><p>No boring lists, just a cozy field full of the things you've grown 🎉!!!</p><button id="about-ok" class="plant-button" type="button">Let’s grow!</button></div></section>
+      <div id="toast" role="status"></div>
+      <div id="scarecrow-wrap" class="scarecrow-wrap" role="button" tabindex="0" aria-label="Talk to the farm crow" aria-expanded="false"><div class="scarecrow"><img class="crow-art" src="assets/crow.svg" alt="Friendly farm crow" draggable="false" /></div></div>
+      <section id="scarecrow-dialogue" class="scarecrow-dialogue hidden" role="dialog" aria-modal="false" aria-labelledby="scarecrow-title"><h2 id="scarecrow-title">KiKi</h2><p id="scarecrow-message">Caw! The field and I have seen a thing or two.</p><form id="scarecrow-form" class="scarecrow-form"><input id="scarecrow-input" maxlength="600" autocomplete="off" placeholder="Ask about the field..." /><button type="submit">Ask</button></form></section><span id="scarecrow-spark" class="scarecrow-spark" aria-hidden="true">✦</span>
+    </main>
+    <script src="js/audio.js"></script><script src="js/farm.js"></script><script src="js/app.js"></script><script src="js/scarecrow.js"></script>
+  </body>
+</html>

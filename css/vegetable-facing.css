@@ -1,0 +1,2 @@
+/* Each species alternates independently: normal, mirrored, normal, mirrored. */
+.task.flipped .veggie-art{transform:scaleX(-1)}

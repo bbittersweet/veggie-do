@@ -1,0 +1,3 @@
+/* The scarecrow speaks through a soft thought bubble rather than a pointed speech tail. */
+.scarecrow-dialogue{right:180px;bottom:145px;border-radius:38px;background:#fff8dc}.scarecrow-dialogue:before,.scarecrow-dialogue:after{display:none}
+.scarecrow-dialogue,.scarecrow-dialogue h2,.scarecrow-dialogue p,.scarecrow-dialogue input,.scarecrow-dialogue button{font-size:14px!important}

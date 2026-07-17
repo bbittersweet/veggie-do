@@ -1,0 +1,2 @@
+/* Leafy silhouettes keep their full rounded outline—no hard clipping on edges. */
+.task.lettuce .body{clip-path:none;border-radius:43% 43% 48% 48%}.task.cabbage .body{clip-path:none}.task.broccoli .leaves{overflow:visible}

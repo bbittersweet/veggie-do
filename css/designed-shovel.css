@@ -1,0 +1,3 @@
+/* User-designed shovel control; its artwork carries the visual language without labels. */
+.shovel-button{width:115px;height:225px;border:0;background:transparent url('../assets/shovel.svg') center/auto 100% no-repeat;text-shadow:none}.shovel-button>*{opacity:0}.shovel-button:hover,.shovel-button.active{transform:translateY(-5px) rotate(-5deg)}.shovel-button.active{filter:drop-shadow(0 0 4px #f4df73)}
+@media(max-width:620px){.shovel-button{width:76px;height:103px;transform:scale(.8);transform-origin:bottom left}.shovel-button:hover,.shovel-button.active{transform:scale(.8) translateY(-5px) rotate(-5deg)}}

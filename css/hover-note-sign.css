@@ -1,0 +1,2 @@
+/* Hover swaps the single wooden sign from task name to the task note. */
+.task .note-bubble{display:none}.task:hover .sign{font-size:0;padding:3px 8px;min-height:27px}.task:hover .sign:before{content:attr(data-note);display:block;font:17px/1.05 Patrick Hand}.task:hover .sign:after{display:block}

@@ -1,0 +1,2 @@
+/* All vegetable bodies use a complete, soft outline with no sliced silhouette edges. */
+.task .body,.task.pepper .body,.task.orange-pepper .body,.task.red-apple .body,.task.green-apple .body,.task.radish .body,.task.carrot .body,.task.lettuce .body{clip-path:none!important;border-radius:50%!important}.task.chili .body{border-radius:48% 48% 54% 54%!important}.task.cucumber .body{border-radius:46%!important}.task.sweet-potato .body{border-radius:50%!important}.task .body{box-sizing:border-box;transform-origin:center center}

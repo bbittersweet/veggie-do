@@ -1,0 +1,2 @@
+/* Each tag sits at the same visual distance above the top/stem of its SVG vegetable. */
+.task .sign{top:auto;bottom:var(--tag-bottom,132px)}.task.tomato-asset{--tag-bottom:132px}.task.pumpkin-asset{--tag-bottom:212px}.task.broccoli-asset{--tag-bottom:175px}
