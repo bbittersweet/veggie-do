@@ -1,4 +1,4 @@
 /* A consistent text scale throughout the interface. */
 #farm,#farm button,#farm input,#farm textarea,#farm select,#farm h1,#farm h2,#farm h3,#farm p,#farm span,#farm small,#farm strong,#farm label,#farm legend,#farm li{font-size:14px!important}
-#farm .harvest-journal h2,#farm .scarecrow-dialogue h2,#farm .about-card h2,#farm .seed-form h2{font-size:18px!important}#farm .brand h1{font-size:50px!important}
+#farm .harvest-journal h2,#farm .scarecrow-dialogue h2,#farm .about-card h2,#farm .seed-form h2{font-size:18px!important}#farm .brand h1{font-size:56px!important}
 #farm .reset-farm{font-size:18px!important;font-weight:700}
