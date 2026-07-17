@@ -1,0 +1,10 @@
+/* Completion messages match the farm's calm, outlined controls. */
+#toast {
+  background: #fff4ce;
+  color: var(--ink);
+  border: 4px solid #000;
+  border-radius: 28px;
+  box-shadow: none;
+  font: 700 14px Fredoka, Arial, sans-serif;
+  padding: 9px 18px;
+}
