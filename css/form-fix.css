@@ -1,1 +1,1 @@
-.priority-options button{flex:1;cursor:pointer;font-family:inherit}.priority-options .selected{transform:translateY(-3px);box-shadow:0 4px 0 var(--ink)}
+.seed-form{width:min(535px,calc(100vw - 34px));padding:28px 40px 30px}.priority-options{gap:12px}.priority-options button{flex:1;cursor:pointer;font-family:inherit;transition:none}.priority-options .selected{transform:none;box-shadow:none}
