@@ -1,4 +1,4 @@
 .task .sign{transform:translateX(-50%)}.seed-bag{transform:none}.seed-bag:hover{transform:translateY(-7px)}.farm-status{transform:none}.farm-status:hover{transform:translateY(-4px)}.shovel-button:hover,.shovel-button.active{transform:translateY(-5px)}
 .reset-farm{transform:translateX(-50%)}.reset-farm:hover{transform:translateX(-50%) translateY(-3px)}
-.reset-farm{background:#d94b43;color:#fff8dc}.reset-farm:hover{background:#ef6259}
+.reset-farm{background:#d94b43;color:#fff8dc}.reset-farm:hover{background:#d94b43}
 @media(max-width:620px){.seed-bag{transform:scale(.8)}.seed-bag:hover{transform:scale(.8) translateY(-7px)}.farm-status{transform:scale(.75)}.farm-status:hover{transform:scale(.75) translateY(-4px)}.shovel-button:hover,.shovel-button.active{transform:scale(.8) translateY(-5px)}}
